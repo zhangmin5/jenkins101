@@ -1,27 +1,31 @@
-# Create a Classic Pipeline with Jenkins on OpenShift 4.5
+# 在 OpenShift 4.x 上使用 Jenkins 创建经典管道
 
-## Requirements
+## 要求
 
-* An IBM Cloud account
-* An OpenShift 4.x cluster with a minimum of 2 worker nodes
-* Access to a terminal with the `oc` cli and `ibmcloud` cli, use [Skills Network](https://labs.cognitiveclass.ai) or [IBM Cloud shell](https://shell.cloud.ibm.com). For instructions go [here](https://ibm.github.io/workshop-setup/COGNITIVECLASS/).
-* A Jenkins instance on OpenShift 4.x, see setup below,
-* A Github fork of [https://github.com/remkohdev/spring-client](https://github.com/remkohdev/spring-client),
-* Github personal access token
+*IBM Cloud 帐户
+*一个至少有 2 个工作节点的 OpenShift 4.x 集群
+*使用occli 和ibmcloudcli访问终端，使用Skills Network或IBM Cloud shell。有关说明，请转到此处。
+*OpenShift 4.x 上的 Jenkins 实例，请参阅下面的设置，
+*https://github.com/remkohdev/spring-client的 Github 分支，
+*Github 个人访问令牌
 
-## Setup Jenkins on OpenShift 4.x
+## 在 OpenShift 4.x 上设置 Jenkins
 
-Go to [Setup Jenkins on OpenShift 4.x](https://ibm.github.io/workshop-setup/JENKINS/) to complete the Jenkins setup and configuration on OpenShift 4.x using the Jenkins Operator.
+转到在 OpenShift 4.x 上设置 Jenkins以使用 Jenkins Operator在 OpenShift 4.x上完成 Jenkins 设置和配置。
 
-## Fork the `spring-client` App in Github
+## spring-client在 Github 中fork应用程序
 
-To create a fork of the spring-client repository:
+要创建 spring-client 存储库的分支： 
 
-1. Go to [https://github.com/remkohdev/spring-client](https://github.com/remkohdev/spring-client),
-1. Cick the `Fork` button in the to right to create a fork in your own GitHub organization, e.g. `https://github.com/<username>/spring-client`
-1. Review the Jenkinsfile that is included in the Spring Client repository,
-1. Edit the Jenkinsfile,
-1. Copy the login command to your OpenShift cluster,
+转到https://github.com/remkohdev/spring-client， 
+
+单击右侧的Fork按钮在您自己的 GitHub 组织中创建一个分支，例如https://github.com/<username>/spring-client 
+
+查看包含在 Spring Client 存储库中的 Jenkinsfile，  
+
+编辑 Jenkinsfile， 
+
+将登录命令复制到您的 OpenShift 集群.
 
     ![OpenShift Copy Login Command](../images/copy-login-command.png)
 
@@ -29,8 +33,7 @@ To create a fork of the spring-client repository:
     oc login https://c100-e.us-south.containers.cloud.ibm.com:30645 --token=CgwpwTu12sJV3u45iFFWd-6V7JsD8b90JBoJk1zGR2I
     ```
 
-    1. In the `environment` section of the `Jenkinsfile`, change the `LOGIN_URL` and the `LOGIN_PORT` to match
-
+    1. 在 的environment部分中Jenkinsfile，将LOGIN_URL和更改LOGIN_PORT为匹配
     ```console
     pipeline {
     agent any
@@ -43,31 +46,35 @@ To create a fork of the spring-client repository:
     }  
     ```
 
-    **Note:** it is not proper to leave configuration details in your repository, let alone on public Github, but for simplicity I defined the URL and NodePort here.
+    注意：将配置详细信息留在您的存储库中是不合适的，更不用说在公共 Github 上了，但为了简单起见，我在这里定义了 URL 和 NodePort。  
 
-1. Commit changes to the `Jenkinsfile` to your Github fork. The Jenkins pipeline will use your `Jenkinsfile` to deploy your forked `spring-client` to your own OpenShift cluster.
+将更改提交Jenkinsfile到您的 Github 分支。Jenkins 管道将使用您Jenkinsfile将分叉部署spring-client到您自己的 OpenShift 集群。  
+## 创建 Github 个人访问令牌  
 
-## Create a Github Personal Access Token
+在https://github.com/登录您的 Github 帐户，  
 
-1. Login to your Github account at [https://github.com/](https://github.com/),
-1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens),
-1. Click `Generate new token`,
-1. Under `Note` add `github-access-token-for-jenkins-on-openshift`,
-1. Select the scopes for `repo`, `read:repo_hook`, and `user`,
-1. Click `Generate token`,
-1. Copy the token and save it, you need it to create the Jenkins pipeline from the Github source,
+转到https://github.com/settings/tokens，  
+
+点击Generate new token,  
+
+在Note添加下github-access-token-for-jenkins-on-openshift，  
+
+选择repo、read:repo_hook、 和的范围user，  
+
+点击Generate token,  
+
+复制令牌并保存，您需要它来从 Github 源创建 Jenkins 管道，  
 
     ![github personal access token 1](../images/github-personal-access-token-1.png)
 
     ![github personal access token 2](../images/github-personal-access-token-2.png)
 
-1. E.g. create an environment variable GITHUB_TOKEN,
-
+1. 例如创建一个环境变量 GITHUB_TOKEN，  
     ```console
     export GITHUB_TOKEN=<your token>
     ```
 
-## Configure Jenkins Access to OpenShift
+## 配置 Jenkins 对 OpenShift 的访问  
 
 1. Go to the OpenShift web console again or use the `Copy Login Command` from earlier again,
 1. From the logged in user profile dropdown, click the `Copy Login Command`. The command should look like,
@@ -107,7 +114,7 @@ To create a fork of the spring-client repository:
 
     ![Jenkins new credentials](../images/jenkins-new-credential.png)
 
-## Create a Jenkins Pipeline
+## 创建 Jenkins Pipeline
 
 1. Make sure a project `springclient-ns` exists in OpenShift,
 1. if no `springclient-ns` project exists, create it from the cloud shell,
