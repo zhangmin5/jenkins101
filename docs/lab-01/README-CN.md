@@ -116,50 +116,49 @@
 
 ## 创建 Jenkins Pipeline
 
-1. Make sure a project `springclient-ns` exists in OpenShift,
-1. if no `springclient-ns` project exists, create it from the cloud shell,
+1. 确保springclient-nsOpenShift 中存在一个项目,
+1. 如不存在，新建一个项目
 
     ```console
     oc new-project springclient-ns
     ```
 
-1. Or via the UI, open the OpenShift web console,
-1. From the top navigation dropdown, go to the `Cluster Console`,
-1. Go to Administration > Projects,
+1. 或者通过 UI，打开 OpenShift Web 控制台,
+1. 从顶部导航下拉菜单中，转到Cluster Console,
+1. 转到 Administration > Projects,
 1. Filter projects by `springclient-ns`,
-1. If there is no such project, click `Create Project` to create it,
+1. 如果没有这个项目，点击Create Project创建,
 
     ![OpenShift Jenkins credentials](../images/jenkins-new-project.png)
 
-1. The Jenkinsfile of the spring-client application defines a stage to delete and create the `springclient-ns` project. The delete step causes an error when the project it tries to delete is missing,
+1. spring-client 应用程序的 Jenkinsfile 定义了删除和创建springclient-ns项目的阶段。当它尝试删除的项目丢失时，删除步骤会导致错误,
 
-1. Go back to the Jenkins dashboard. If you closed Jenkins,
-1. Go to the `Application Console`, and go to the project `jenkins`,
-1. Click the Route for External Traffic to open the Jenkins instance,
-1. Click `Log in with OpenShift`,
-1. In the Jenkins Dashboard, click `Open Blue Ocean` to open the Blue Ocean editor.
+1. 转到 the Jenkins dashboard. 
+1. 转到 `Application Console`, and go to the project `jenkins`,
+1. 点击 the Route for External Traffic 打开jenkins,
+1. 点击 `Log in with OpenShift`,
+1. 在 Jenkins Dashboard, 点击 `Open Blue Ocean`  打开 the Blue Ocean editor.
 
     ![Jenkins Open Blue Ocean](../images/jenkins-open-blue-ocean.png)
 
-1. If the Welcome to Jenkins popup window shows, click the `Create a new Pipeline` button,
+1. 如果欢迎使用 Jenkins 弹出窗口显示，请单击Create a new Pipeline按钮， 
 
     ![Jenkins Create new pipeline](../images/jenkins-welcome-create-pipeline.png)
 
-1. Otherwise, click the `New Pipeline` button in the Pipelines window. This will create a new Multibranch Pipeline,
+1. 否则，单击New Pipeline“管道”窗口中的按钮。这将创建一个新的多分支管道， 
 
     ![Jenkins New pipeline](../images/jenkins-new-pipeline.png)
 
-1. Select the GitHub option,
-
+1. 选择 GitHub 选项， 
     ![Jenkins Select SCM](../images/jenkins-select-scm.png)
 
 1. In the Connect to GitHub section, paste the personal access token you created in your Github account,
 
     ![Jenkins Select Organization](../images/jenkins-which-org.png)
 
-1. Click Connect,
+1. 点击 Connect, 
 1. Select the organization to where you forked the `spring-client` repository,
-1. Search for and select the `spring-client` repo,
+1. 搜索和选择 `spring-client` repo,
 
     ![Jenkins Choose Repo](../images/github-token-choose-repo.png)
 
