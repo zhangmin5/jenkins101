@@ -2,12 +2,12 @@
 
 ## 要求
 
-*IBM Cloud 帐户  
-*一个至少有 2 个工作节点的 OpenShift 4.x 集群  
-*使用occli 和ibmcloudcli访问终端，使用Skills Network或IBM Cloud shell。有关说明，请转到此处。  
-*OpenShift 4.x 上的 Jenkins 实例，请参阅下面的设置，  
-*https://github.com/remkohdev/spring-client的 Github 分支，  
-*Github 个人访问令牌  
+* IBM Cloud 帐户  
+* 一个至少有 2 个工作节点的 OpenShift 4.x 集群  
+* 使用occli 和ibmcloudcli访问终端，使用Skills Network或IBM Cloud shell。有关说明，请转到此处。  
+* OpenShift 4.x 上的 Jenkins 实例，请参阅下面的设置，  
+* https://github.com/remkohdev/spring-client的 Github 分支，  
+* Github 个人访问令牌  
 
 ## 在 OpenShift 4.x 上设置 Jenkins  
 
