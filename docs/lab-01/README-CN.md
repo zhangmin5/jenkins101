@@ -163,28 +163,24 @@
 
     ![Jenkins Choose Repo](../images/github-token-choose-repo.png)
 
-1. Click Create Pipeline,
-1. When the pipeline creation is completed, a build is triggered automatically,
+1. 单击创建 Pipeline,
+1. 管道创建完成后，会自动触发构建,
 
     ![Jenkins Run Pipeline](../images/jenkins-run-pipeline.png)
 
-1. You should see a successful build of the pipeline,
-1. If an error occurs, you can debug the pipeline by unfolding the red cross indicating on the stage, which indicates the pipeline failed in that stage,
-1. Unfold the step in the stage, to see the log output,
+1. 您应该看到管道的成功构建 ,
+1. 如果发生错误，可以通过展开阶段上的红色十字指示来调试管道，表示该阶段管道失败,
+1. 查看日志,
 
     ![Jenkins Successful Build](../images/jenkins-error-1.png)
 
     ![Jenkins Successful Build](../images/jenkins-error-2.png)
 
-1. Any update to the Github repository, e.g. a push to update the Jenkinsfile, source code of the Spring Boot application, or the README.md file, will automatically trigger a new build of the pipeline,
+1. 对 Github 存储库的任何更新，例如推送更新 Jenkinsfile、Spring Boot 应用程序的源代码或 README.md 文件，都将自动触发管道的新构建,
 
     ![Jenkins Successful Build](../images/jenkins-build-trigger.png)
 
-1. If you're interested, review the pipeline settings:
-    1. Click the Configure option,
-    1. Review the settings,
-1. From the cloud shell, make sure you're logged in to the OpenShift console,
-1. Use the project `oc project springclient-ns`,
+1. 使用项目 `oc project springclient-ns`,
 
     ```console
     oc project springclient-ns
@@ -204,7 +200,7 @@
     curl -X GET http://$ROUTE/api/hello?name=you
     ```
 
-    outputs,
+    输出,
 
     ```console
     ROUTE="$(oc get route springclient -o json | jq -r '.spec .host')"
