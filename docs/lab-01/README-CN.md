@@ -51,19 +51,19 @@
 将更改提交Jenkinsfile到您的 Github 分支。Jenkins 管道将使用您Jenkinsfile将分叉部署spring-client到您自己的 OpenShift 集群。  
 ## 创建 Github 个人访问令牌  
 
-在https://github.com/登录您的 Github 帐户，  
+1. 在https://github.com/登录您的 Github 帐户，  
 
-转到https://github.com/settings/tokens，  
+1. 转到https://github.com/settings/tokens，  
 
-点击Generate new token,  
+1. 点击Generate new token,  
 
-在Note添加下github-access-token-for-jenkins-on-openshift，  
+1. 在Note添加下github-access-token-for-jenkins-on-openshift，  
 
-选择repo、read:repo_hook、 和的范围user，  
+1. 选择repo、read:repo_hook、 和的范围user，  
 
-点击Generate token,  
+1. 点击Generate token,  
 
-复制令牌并保存，您需要它来从 Github 源创建 Jenkins 管道，  
+1. 复制令牌并保存，您需要它来从 Github 源创建 Jenkins 管道，  
 
     ![github personal access token 1](../images/github-personal-access-token-1.png)
 
