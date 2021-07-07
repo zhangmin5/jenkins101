@@ -2,16 +2,16 @@
 
 ## 要求
 
-*IBM Cloud 帐户
-*一个至少有 2 个工作节点的 OpenShift 4.x 集群
-*使用occli 和ibmcloudcli访问终端，使用Skills Network或IBM Cloud shell。有关说明，请转到此处。
-*OpenShift 4.x 上的 Jenkins 实例，请参阅下面的设置，
-*https://github.com/remkohdev/spring-client的 Github 分支，
-*Github 个人访问令牌
+*IBM Cloud 帐户  
+*一个至少有 2 个工作节点的 OpenShift 4.x 集群  
+*使用occli 和ibmcloudcli访问终端，使用Skills Network或IBM Cloud shell。有关说明，请转到此处。  
+*OpenShift 4.x 上的 Jenkins 实例，请参阅下面的设置，  
+*https://github.com/remkohdev/spring-client的 Github 分支，  
+*Github 个人访问令牌  
 
-## 在 OpenShift 4.x 上设置 Jenkins
+## 在 OpenShift 4.x 上设置 Jenkins  
 
-转到在 OpenShift 4.x 上设置 Jenkins以使用 Jenkins Operator在 OpenShift 4.x上完成 Jenkins 设置和配置。
+转到在 OpenShift 4.x 上设置 Jenkins以使用 Jenkins Operator在 OpenShift 4.x上完成 Jenkins 设置和配置。  
 
 ## spring-client在 Github 中fork应用程序
 
@@ -76,14 +76,14 @@
 
 ## 配置 Jenkins 对 OpenShift 的访问  
 
-1. Go to the OpenShift web console again or use the `Copy Login Command` from earlier again,
-1. From the logged in user profile dropdown, click the `Copy Login Command`. The command should look like,
+1. 再次转到 OpenShift Web 控制台或再次使用Copy Login Command之前的,  
+1. 从登录的用户配置文件下拉列表中，单击Copy Login Command,
 
     ```console
     oc login https://<your-openshift-url>:<your-openshift-port> --token=<your-openshift-api-token>
     ```
 
-1. Copy the OpenShift API token value, e.g. aaHYcMwUyyusfNaS45aAiQer_Kas1YUa45YTA2AxsNI,
+1. 复制 OpenShift API token value, e.g. aaHYcMwUyyusfNaS45aAiQer_Kas1YUa45YTA2AxsNI,
 
 1. Go to the Jenkins dashboard,
 1. Click Credentials, or
@@ -197,7 +197,7 @@
     Now using project "springclient-ns" on server "https://c100-e.us-south.containers.cloud.ibm.com:30645".
     ```
 
-1. Get the route and test the deployment,
+1.获取路由并测试部署 ,
 
     ```console
     ROUTE="$(oc get route springclient -o json | jq -r '.spec .host')"
