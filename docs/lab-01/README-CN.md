@@ -15,17 +15,17 @@
 
 ## spring-client在 Github 中fork应用程序
 
-要创建 spring-client 存储库的分支： 
+1. 要创建 spring-client 存储库的分支： 
 
-转到https://github.com/remkohdev/spring-client， 
+1. 转到https://github.com/remkohdev/spring-client， 
 
-单击右侧的Fork按钮在您自己的 GitHub 组织中创建一个分支，例如https://github.com/<username>/spring-client 
+1. 单击右侧的Fork按钮在您自己的 GitHub 组织中创建一个分支，例如https://github.com/<username>/spring-client 
 
-查看包含在 Spring Client 存储库中的 Jenkinsfile，  
+1. 查看包含在 Spring Client 存储库中的 Jenkinsfile，  
 
-编辑 Jenkinsfile， 
+1. 编辑 Jenkinsfile， 
 
-将登录命令复制到您的 OpenShift 集群.
+1. 将登录命令复制到您的 OpenShift 集群.
 
     ![OpenShift Copy Login Command](../images/copy-login-command.png)
 
