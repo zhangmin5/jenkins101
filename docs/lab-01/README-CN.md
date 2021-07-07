@@ -85,32 +85,38 @@
 
 1. 复制 OpenShift API token value, e.g. aaHYcMwUyyusfNaS45aAiQer_Kas1YUa45YTA2AxsNI,
 
-1. Go to the Jenkins dashboard,
-1. Click Credentials, or
-1. Go to Jenkins > Manage Jenkins > Configure Credentials
+1. 转到 Jenkins dashboard,
+1. 点击 Credentials, or
+1. 转到 Jenkins > Manage Jenkins > Configure Credentials
 
     ![OpenShift Jenkins credentials](../images/jenkins-credentials.png)
 
-1. Go to Credentials > System,
+1. 转到 Credentials > System,
 
     ![OpenShift Jenkins credentials](../images/jenkins-credentials-system.png)
 
-1. In the System view, select the dropdown for Global credentials (unrestricted),
+1. 在 System view,选择r Global credentials (unrestricted),
 
     ![OpenShift Jenkins credentials](../images/jenkins-credentials-system-add.png)
+    
+1. 从下拉列表中，单击Add credentials，
 
-1. From the drowdown, click `Add credentials`,
-1. The Jenkinsfile expects an OpenShift API token credential to be available named `openshift-login-api-token`,
-1. For Kind select `Username with password`,
-1. For Scope select `Global`,
-1. For Username enter `token`,
-1. For Password paste the OpenShift API token from the OpenShift web console login command,
-1. For ID enter `openshift-login-api-token`, which is the ID that the Jenkinsfile will look for,
-1. For Description enter `openshift-login-api-token`,
+1. Jenkinsfile 期望一个名为 的 OpenShift API 令牌凭证可用openshift-login-api-token，
 
+1. 对于种类选择Username with password，
+
+1. 对于范围选择Global，
+
+1. 对于用户名输入token，
+
+1. 对于密码，从 OpenShift Web 控制台登录命令粘贴 OpenShift API 令牌，
+
+1. 对于 ID 输入openshift-login-api-token，这是 Jenkinsfile 将查找的 ID，
+
+1. 对于描述输入openshift-login-api-token， 
     ![Jenkins credentials](../images/jenkins-new-credentials.png)
 
-1. Click OK,
+1. 点击 OK,
 
     ![Jenkins new credentials](../images/jenkins-new-credential.png)
 
